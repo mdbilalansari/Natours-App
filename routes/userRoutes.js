@@ -22,10 +22,10 @@ router.patch(
 );
 router.delete('/deleteMe', userController.deleteMe);
 
-router.param('id', (req, res, next, val) => {
-  console.log(`Tour id is: ${val}`);
-  next();
-});
+// router.param('id', (req, res, next, val) => {
+//   console.log(`Tour id is: ${val}`);
+//   next();
+// });
 
 router.use(authController.restrictTo('admin'));
 router

@@ -54,7 +54,6 @@ exports.createBookingCheckout = catchAsync(async function(req, res, next) {
   if (!tour || !user || !price) return next();
 
   const booking = await Booking.findOne({ tour, user });
-  console.log(booking);
   if (!booking) {
     await Booking.create({ tour, user, price });
   }
